@@ -16,12 +16,12 @@ The hardest was keeping it simple and easy to use on very small phones without o
 
 ### After Enhancement  
 ![After UI](after1.jpg)
-![After UI](images/after2.jpg)
-![After UI](images/after3.jpg)
-![Mobile UI](images/mobile1.jpg)
-![Mobile UI](images/mobile2.jpg)
-![Mobile UI](images/mobile3.jpg)
-![Mobile UI](images/mobile4.jpg)
+![After UI](after2.jpg)
+![After UI](after3.jpg)
+![Mobile UI](mobile1.jpg)
+![Mobile UI](mobile2.jpg)
+![Mobile UI](mobile3.jpg)
+![Mobile UI](mobile4.jpg)
 
 
 
