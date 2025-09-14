@@ -12,6 +12,18 @@ For speed, I avoided heavy images and animations that would slow down load time.
 ## Issues
 The hardest was keeping it simple and easy to use on very small phones without overcrowding the screen. I did this by using a foldable menu and consistent padding for interactive elements.
 
-## Screenshots:
-Hereby attaching after changes:
+## Visual Showcase
+
+### After Enhancement  
+![After UI](images/after1.jpg)
+![After UI](images/after2.jpg)
+![After UI](images/after3.jpg)
+![Mobile UI](images/mobile1.jpg)
+![Mobile UI](images/mobile2.jpg)
+![Mobile UI](images/mobile3.jpg)
+![Mobile UI](images/mobile4.jpg)
+
+
+
+
 
