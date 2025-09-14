@@ -1,0 +1,9 @@
+.login-page {
+  min-height: 80vh;
+  background: linear-gradient(to bottom right, #d9e2ec, #f0f4f8);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,9 @@
+.home-page {
+  background: linear-gradient(120deg, #f0f4f8, #d9e2ec);
+  min-height: 100vh;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}

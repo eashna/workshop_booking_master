@@ -1,0 +1,19 @@
+/**
+ * Footer Styles
+ */
+.navbar {
+    z-index: 1000;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #61615F;
+    color: white;
+    text-align: center;
+    z-index: 100;
+}
+.base-content {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}

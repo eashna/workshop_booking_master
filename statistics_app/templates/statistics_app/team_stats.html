@@ -1,0 +1,48 @@
+{% extends 'workshop_app/base.html' %}
+
+{% block title %}
+ Workshop  Statistics
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav nav-pills list-group">
+                {% for team in all_teams %}
+                    <li class="nav-item">
+                        <a href="{% url 'statistics_app:team' team.id %}" class="nav-link list-group-item">
+                            Team {{forloop.counter}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <br>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: {{team_labels|safe}},
+            datasets: [{
+                data: {{ws_count|safe}},
+                label: "Team Members Workshops",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+            }]
+        },
+        // Configuration options go here
+        options: {}
+    });
+</script>
+{% endblock %}

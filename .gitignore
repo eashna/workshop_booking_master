@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+*.log
+develop-eggs/
+eggs/
+.eggs/
+lib/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django stuff:
+*.log
+local_settings.py
+
+# PyBuilder
+target/
+
+#Database
+db.sqlite3
+
+#MAC OS specific
+.DS_Store
+
+#Pycharm
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workshop_portal.iml
+.idea/workspace.xml
+.idea/vcs.xml
+
+#Emacs
+\#*#
+#Vim
+*.swp
+
+#images/gif
+*.png
+*.gif

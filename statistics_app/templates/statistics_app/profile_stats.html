@@ -1,0 +1,111 @@
+{% extends 'workshop_app/base.html' %}
+
+{% block title %}
+  Profile Statistics
+{% endblock %}
+
+{% block extra %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{URL_ROOT}}/static/workshop_app/js/bootstrap-3.3.7.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			    $( "fieldset" ).controlgroup();
+		});
+
+		$(document).ready(function() {
+		$('input[type=radio]').change(function() {
+			        if (this.value == "CP") {
+			        	var ielem = document.getElementById('instructor_data');
+			        	var celem = document.getElementById('coordinator_data');
+			        	ielem.style.display = "none";
+			        	celem.style.display = "table";
+			            }
+			        else{
+			        	var ielem = document.getElementById('instructor_data');
+			        	var celem = document.getElementById('coordinator_data');
+			        	ielem.style.display = "table";
+			        	celem.style.display = "none";
+			        }
+		});
+	});
+	</script>
+{% endblock %}
+
+
+{% block content %}
+	<div class="container">
+	 	<div class="row">
+			<div class="col-md-6" align="left" >
+				  <fieldset data-mini="true">
+				    <label for="radio-1">Instructor Statistics </label>
+				    <input type="radio" name="radio-1" id="radio-1" value="IP">
+				    <label for="radio-2">Coordinator Statistics</label>
+				    <input type="radio" name="radio-1" id="radio-2" value="CP">
+				  </fieldset>
+			</div>
+			<br>
+			<br>
+			<!-- Instructor Data Table -->
+				<table class="table" id="instructor_data" style="display: none">
+					<thead>
+						<tr>
+							<th></th>
+							<th>username</th>
+							<th>Full Name</th>
+							<th>Institute Name</th>
+							<th>Phone Number</th>
+							<th>Workshop Count</th>
+						</tr>
+					</thead>
+					{% csrf_token %}
+					{% for profile_data in instructor_data %}
+						<tbody>
+							<tr>
+								<td>{{ forloop.counter}}</td>
+								<td>{{ profile_data.profile.user}}</td>
+								<td>{{ profile_data.profile.user.first_name}} {{ profile_data.profile.user.last_name}}</td>
+								<td>{{ profile_data.profile.institute}}</td>
+								<td>{{ profile_data.profile.phone_number}}</td>
+								<td>{{ profile_data.count}}</td>
+							</tr>
+						</tbody>
+					{% endfor %}
+				</table>
+
+			<!-- Coordinator Data Table -->
+				<table class="table" id="coordinator_data" style="display: none">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th>Institute Name</th>
+							<th>Phone Number</th>
+							<th>Registration Date</th>
+							<th>Workshop Count</th>
+						</tr>
+					</thead>
+					{% csrf_token %}
+					{% for profile_data in coordinator_data %}
+						<tbody>
+					{% if profile_data.count > 0 %}
+							<tr>
+								<td>{{ forloop.counter }}</td>
+								<td><a href="{{ URL_ROOT }}/view_comment_profile/{{ profile_data.profile.user.id }}">
+								{{ profile_data.profile.user.get_full_name }}</a></td>
+								<td>{{ profile_data.profile.institute}}</td>
+								<td>{{ profile_data.profile.phone_number}}</td>
+								<td>{{ profile_data.profile.user.date_joined | date}}</td>
+								<td>{{ profile_data.count}}</td>
+							</tr>
+					{% endif %}
+						</tbody>
+					{% endfor %}
+				</table>
+		</div>
+	</div>
+
+{% endblock %}
