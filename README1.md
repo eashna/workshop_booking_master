@@ -15,7 +15,7 @@ The hardest was keeping it simple and easy to use on very small phones without o
 ## Visual Showcase
 
 ### After Enhancement  
-![After UI](images/after1.jpg)
+![After UI](after1.jpg)
 ![After UI](images/after2.jpg)
 ![After UI](images/after3.jpg)
 ![Mobile UI](images/mobile1.jpg)
